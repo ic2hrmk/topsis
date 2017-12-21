@@ -35,3 +35,45 @@ func Sum(elements []float32) float32 {
 
 	return sum
 }
+
+func GetColumn(matrix[][]float32, i int) (column []float32) {
+	column = NewFloatVector(len(matrix))
+
+	for j, row := range matrix {
+		column[j] = row[i]
+	}
+
+	return
+}
+
+func GetMin(vector []float32) (element float32) {
+	if len(vector) == 0 {
+		return
+	}
+
+	element = vector[0]
+
+	for i := range vector {
+		if element > vector[i] {
+			element = vector[i]
+		}
+	}
+
+	return
+}
+
+func GetMax(vector []float32) (element float32) {
+	if len(vector) == 0 {
+		return
+	}
+
+	element = vector[0]
+
+	for i := range vector {
+		if element < vector[i] {
+			element = vector[i]
+		}
+	}
+
+	return
+}
